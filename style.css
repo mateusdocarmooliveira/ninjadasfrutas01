@@ -1,0 +1,211 @@
+* { box-sizing: border-box; }
+    @font-face {
+      font-family: go;
+      src: url("go3v2.ttf");
+    }
+    body {
+      margin: 0;
+      background: #753e00;
+      color: #ffd43b;
+      font-family: "go";
+      text-align: center;
+      overflow: hidden;
+      font-size: 25px;
+    }
+
+   
+
+    #info {
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 35px;
+      justify-content: space-around;
+      padding: 30px;
+    }
+    #combo { color: #ffd43b; }
+
+
+    #game {
+      display: block;
+      width: 100%;
+      height: 73vh;
+      background: #4b2a17;
+    
+    }
+
+    button {
+      margin: 8px;
+      padding: 12px 24px;
+      border: 0;
+      border-radius: 10px;
+      background: #ffffff00;
+      font-weight: bold;
+      cursor: pointer;
+      color: #ffd43b;
+      font-family: "go";
+      font-size: 25px;
+    }
+
+    #cameraBox {
+      position: fixed;
+      top: 12px;
+      right: 12px;
+      z-index: 10;
+      width: 190px;
+      padding: 5px;
+
+      
+      
+    }
+
+    #camera {
+      display: block;
+      width: 100%;
+      transform: scaleX(-1);
+    }
+
+    #cameraStatus {
+      margin: 4px 0 0;
+      font-size: 12px;
+      color: #00ff88;
+    }
+
+    #controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 5px 10px;
+      font-size: 14px;
+    }
+
+    #sensitivity {
+      width: 180px;
+      
+      cursor: pointer;
+    }
+
+    #sensitivityValue {
+      display: inline-block;
+      min-width: 38px;
+     
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      #cameraBox { width: 125px; }
+      #game { height: 62vh; }
+      #sensitivity { width: 130px; }
+    }
+
+
+/* Tela inicial */
+#startScreen {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(20, 10, 3, 0.58);
+}
+
+.startCard {
+  width: min(560px, 92vw);
+  padding: 38px 28px;
+  border-radius: 22px;
+  background: rgba(45, 24, 10, 0.92);
+}
+
+.startCard h1 {
+  margin: 0 0 18px;
+  color: #ffd43b;
+  font-size: clamp(38px, 8vw, 68px);
+  text-shadow: 3px 4px 0 #7b3100;
+}
+
+.startCard p {
+  color: white;
+  font-size: clamp(16px, 3vw, 22px);
+  line-height: 1.45;
+}
+
+.startCard .startHint {
+  color: #ffd43b;
+  font-size: clamp(14px, 2.5vw, 18px);
+}
+
+#start {
+  margin-top: 18px;
+  padding: 14px 42px;
+  border-radius: 14px;
+  background: #e87512;
+  color: white;
+  font-size: 30px;
+  box-shadow: 0 5px 0 #8b3d08;
+}
+
+#start:hover {
+  background: #ff922e;
+  transform: translateY(-2px);
+}
+
+#start:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+@media (max-width: 600px) {
+  .startCard { padding: 28px 18px; }
+}
+
+/* Botão para voltar ao menu durante a partida */
+#menuButton {
+  position: fixed;
+  top: 36px;
+  left: 12px;
+  z-index: 15;
+  margin: 0;
+  padding: 9px 15px;
+  color: #ffd43b;
+  font-size: 18px;
+}
+#menuButton:hover {
+  background: #e87512;
+  color: white;
+}
+
+/* Meta de pontuação */
+.goal { color: #ffd43b; }
+#goalProgress {
+  position: relative;
+  width: min(1000px, 100%);
+  height: 25px;
+  margin: -1px auto 8px;
+ 
+  
+  overflow: hidden;
+ 
+}
+#goalProgressFill {
+  width: 0%;
+  height: 100%;
+ 
+  background: linear-gradient(90deg, #e87512, #ffe45c);
+  transition: width .2s ease;
+}
+#goalProgressText {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 1px 1px 2px #3b1b00;
+  color: #fff1a8;
+}
+@media (max-width: 600px) {
+  #goalProgress { margin-top: -10px; }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fruit Ninja - Controle por dedo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="startScreen">
+    <div class="startCard">
+      <h1>NINJA DAS frutas</h1>
+      <p>Corte as frutas com a faquinha usando o dedo indicador e alcance 1.500 pontos para vencer.</p>
+      <p class="startHint">Corte várias frutas de uma vez para fazer combos e ganhar tempo extra!</p>
+      <button id="start">JOGAR</button>
+    </div>
+  </div>
+
+  <button id="menuButton" type="button">☰</button>
+
+  <div id="info">
+    <span class="placar">⭐ Pontos: <b id="score">0</b></span>
+    <span class="placar goal">🎯 Meta: <b>1500</b></span>
+    <span class="placar">⏱️ <b id="time">60</b>s</span>
+    <span class="placar" id="combo">⚡ Combo: <b id="comboValue">0</b></span>
+  </div>
+
+  <div id="goalProgress" aria-label="Progresso da meta">
+    <div id="goalProgressFill"></div>
+    <span id="goalProgressText">0 / 1500</span>
+  </div>
+
+  <canvas id="game"></canvas>
+
+  <div id="controls">
+    <label for="sensitivity">Sensibilidade do dedo:</label>
+    <input id="sensitivity" type="range" min="0.6" max="2.5" step="0.1" value="1.6">
+    <span id="sensitivityValue">1.6x</span>
+  </div>
+
+  <div id="cameraBox">
+    <video id="camera" autoplay playsinline muted></video>
+    <p id="cameraStatus">Webcam desligada</p>
+  </div>
+
+  <p id="message">Use o dedo indicador de uma mão para cortar as frutas.</p>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
